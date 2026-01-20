@@ -2,11 +2,11 @@
 
 Dashboard interactif Streamlit pour analyser les ventes d’un e-commerce britannique (Online Retail). Le projet couvre l’exploration, le nettoyage, l’analyse métier et la visualisation des insights clés.
 
-## Démo en ligne
+## 🚀 Démo en ligne
 
 Lien Streamlit Cloud : à compléter après déploiement.
 
-## Aperçu
+## 👀 Aperçu
 
 Ce projet s’appuie sur l’Online Retail Dataset (Kaggle) contenant plus de 500 000 transactions réelles (2010–2011). L’objectif est de produire un tableau de bord décisionnel clair et actionnable.
 
@@ -17,7 +17,7 @@ Principales analyses :
 - Évolution temporelle et saisonnalité
 - Répartition horaire et par jour
 
-## Fonctionnalités du dashboard
+## ✨ Fonctionnalités du dashboard
 
 - Filtres dynamiques (pays, période, montant minimum, top N)
 - KPIs et comparaisons clés
@@ -25,7 +25,7 @@ Principales analyses :
 - Thème sombre optimisé lisibilité
 - Export des données filtrées
 
-## Dataset
+## 📦 Dataset
 
 **Online Retail Dataset** — e-commerce UK
 
@@ -37,7 +37,7 @@ Principales analyses :
 
 Source : [Kaggle](https://www.kaggle.com/datasets/ulrikthygepedersen/online-retail-dataset)
 
-## Démarrage rapide
+## ⚡ Démarrage rapide
 
 ### Prérequis
 
@@ -76,7 +76,7 @@ python -m src.visualization
 
 Les graphiques sont enregistrés dans le dossier [images/](images/) et les données nettoyées dans [data/processed/](data/processed/).
 
-## Structure du projet
+## 🗂️ Structure du projet
 
 ```
 ecommerce-dashboard/
@@ -96,7 +96,7 @@ ecommerce-dashboard/
 └── README.md
 ```
 
-## Insights clés (exemples)
+## 📈 Insights clés (exemples)
 
 - CA total ≈ £10.7M
 - ~20k transactions uniques
@@ -105,7 +105,7 @@ ecommerce-dashboard/
 - Pic de vente en novembre 2011
 - Forte concentration sur UK
 
-## Visualisations générées
+## 🧪 Visualisations générées
 
 - KPIs globales
 - CA par pays (Top 10)
@@ -116,14 +116,14 @@ ecommerce-dashboard/
 - CA par jour de la semaine
 - CA par heure
 
-## Déploiement Streamlit Cloud
+## ☁️ Déploiement Streamlit Cloud
 
 1. Aller sur [share.streamlit.io](https://share.streamlit.io)
 2. Connecter GitHub
 3. Créer une nouvelle app
 4. Sélectionner ce repository et [app.py](app.py)
 
-## État du projet
+## ✅ État du projet
 
 - [x] Exploration initiale
 - [x] Nettoyage et préparation
@@ -132,13 +132,14 @@ ecommerce-dashboard/
 - [x] Dashboard interactif
 - [ ] Déploiement Streamlit Cloud
 
-## Documentation
+## 📚 Documentation
 
 - [CLEANING.md](CLEANING.md) : processus de nettoyage
 - [ANALYSES.md](ANALYSES.md) : synthèse des analyses
 
-## Auteur
+## 👤 Auteur
 
-Samuel MUSIC — Étudiant Data / alternance
+Seyyid-Aassuf - Developpeur Data et IA
 
-LinkedIn : à compléter
+LinkedIn : https://www.linkedin.com/in/seyyid-aassuf-mamadou-96bb27374
+GitHub : https://github.com/Sam050803
