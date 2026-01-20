@@ -1,10 +1,14 @@
 # E-commerce Analytics Dashboard
 
+[![Streamlit](https://img.shields.io/badge/Streamlit-Online-brightgreen)](https://4obfdhcbx64kebwc6cnt3v.streamlit.app/)
+[![Python](https://img.shields.io/badge/Python-3.8%2B-blue)](https://www.python.org/)
+[![Status](https://img.shields.io/badge/Status-Deploy%C3%A9-success)](https://4obfdhcbx64kebwc6cnt3v.streamlit.app/)
+
 Dashboard interactif Streamlit pour analyser les ventes d’un e-commerce britannique (Online Retail). Le projet couvre l’exploration, le nettoyage, l’analyse métier et la visualisation des insights clés.
 
 ## 🚀 Démo en ligne
 
-Lien Streamlit Cloud : à compléter après déploiement.
+Lien Streamlit Cloud : https://4obfdhcbx64kebwc6cnt3v.streamlit.app/
 
 ## 👀 Aperçu
 
@@ -25,9 +29,40 @@ Principales analyses :
 - Thème sombre optimisé lisibilité
 - Export des données filtrées
 
-## 📦 Dataset
+## � Dataset
 
 **Online Retail Dataset** — e-commerce UK
+
+- Période : 01/12/2010 → 09/12/2011
+# E-commerce Analytics Dashboard
+
+[![Streamlit](https://img.shields.io/badge/Streamlit-Live%20Demo-brightgreen)](https://4obfdhcbx64kebwc6cnt3v.streamlit.app/)
+[![Python](https://img.shields.io/badge/Python-3.8%2B-blue)](https://www.python.org/)
+
+Un tableau de bord Streamlit pour analyser les ventes de l’Online Retail Dataset (UK, 2010–2011). Le projet couvre l’exploration, le nettoyage, l’analyse et la visualisation de métriques clés pour des décisions métier.
+
+## Démo
+
+- Application en ligne : https://4obfdhcbx64kebwc6cnt3v.streamlit.app/
+- (Option) Démonstration vidéo : lien à ajouter (YouTube/LinkedIn). Vous pouvez enregistrer une courte capture avec QuickTime (macOS) ou un outil équivalent.
+
+## Objectifs et périmètre
+
+- Calcul et suivi des KPIs (CA, transactions, clients, panier moyen)
+- Identification des pays/produits/clients les plus rentables
+- Analyse temporelle (mensuelle, journalière, horaire)
+- Filtrage interactif et export des données sélectionnées
+
+## Fonctionnalités principales
+
+- Filtres dynamiques (pays, période, montant minimum, top N)
+- 7 graphiques interactifs (Plotly)
+- Thème sombre optimisé pour la lisibilité
+- Export CSV des données filtrées
+
+## Dataset
+
+Online Retail Dataset (UK e-commerce)
 
 - Période : 01/12/2010 → 09/12/2011
 - Lignes initiales : 541 909
@@ -37,21 +72,21 @@ Principales analyses :
 
 Source : [Kaggle](https://www.kaggle.com/datasets/ulrikthygepedersen/online-retail-dataset)
 
-## ⚡ Démarrage rapide
+## Installation
 
 ### Prérequis
 
 - Python 3.8+
 - pip ou conda
 
-### Installation
+### Étapes
 
 ```bash
 # Cloner le repository
-git clone <repository-url>
+git clone https://github.com/Sam050803/ecommerce-dashboard.git
 cd ecommerce-dashboard
 
-# Créer l'environnement virtuel
+# Créer et activer l’environnement
 python -m venv venv
 source venv/bin/activate          # macOS/Linux
 # ou
@@ -67,16 +102,7 @@ pip install -r requirements.txt
 streamlit run app.py
 ```
 
-### Générer les données nettoyées et graphiques (optionnel)
-
-```bash
-python -m src.preprocessing
-python -m src.visualization
-```
-
-Les graphiques sont enregistrés dans le dossier [images/](images/) et les données nettoyées dans [data/processed/](data/processed/).
-
-## 🗂️ Structure du projet
+## Structure du projet
 
 ```
 ecommerce-dashboard/
@@ -96,7 +122,7 @@ ecommerce-dashboard/
 └── README.md
 ```
 
-## 📈 Insights clés (exemples)
+## Insights clés (exemples)
 
 - CA total ≈ £10.7M
 - ~20k transactions uniques
@@ -105,7 +131,7 @@ ecommerce-dashboard/
 - Pic de vente en novembre 2011
 - Forte concentration sur UK
 
-## 🧪 Visualisations générées
+## Visualisations
 
 - KPIs globales
 - CA par pays (Top 10)
@@ -116,30 +142,34 @@ ecommerce-dashboard/
 - CA par jour de la semaine
 - CA par heure
 
-## ☁️ Déploiement Streamlit Cloud
+## Captures d’écran
 
-1. Aller sur [share.streamlit.io](https://share.streamlit.io)
-2. Connecter GitHub
-3. Créer une nouvelle app
-4. Sélectionner ce repository et [app.py](app.py)
+Ajoutez vos captures pour illustrer le dashboard :
 
-## ✅ État du projet
+- [images/dashboard_overview.png](images/dashboard_overview.png)
+- [images/dashboard_time.png](images/dashboard_time.png)
+- [images/dashboard_export.png](images/dashboard_export.png)
 
-- [x] Exploration initiale
-- [x] Nettoyage et préparation
-- [x] Analyses métier
-- [x] Visualisations
+## Déploiement
+
+Déployé sur Streamlit Community Cloud. Pour reproduire :
+
+1. Aller sur share.streamlit.io
+2. Connecter votre compte GitHub
+3. Créer une app et pointer vers ce dépôt et app.py
+
+## État du projet
+
+- [x] Exploration et nettoyage
+- [x] Analyses et visualisations
 - [x] Dashboard interactif
-- [ ] Déploiement Streamlit Cloud
+- [x] Déploiement Community Cloud
 
-## 📚 Documentation
+## Auteur
 
-- [CLEANING.md](CLEANING.md) : processus de nettoyage
-- [ANALYSES.md](ANALYSES.md) : synthèse des analyses
-
-## 👤 Auteur
-
-Seyyid-Aassuf - Developpeur Data et IA
+Seyyid-Aassuf — Développeur Data & IA
 
 LinkedIn : https://www.linkedin.com/in/seyyid-aassuf-mamadou-96bb27374
 GitHub : https://github.com/Sam050803
+
+Dernière mise à jour : 21/01/2026
