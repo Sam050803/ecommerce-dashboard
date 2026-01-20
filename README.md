@@ -114,10 +114,12 @@ Pour plus de détails, voir [CLEANING.md](CLEANING.md).
 
 - [x] Exploration initiale des données
 - [x] Nettoyage et préparation
-- [ ] Analyses exploratoires détaillées
+- [x] Analyses métier
+- [ ] Visualisations
 - [ ] Dashboard interactif
 - [ ] Déploiement
 
 ## Documentation
 
-Voir [CLEANING.md](CLEANING.md) pour la documentation complète du processus de nettoyage.
+- [CLEANING.md](CLEANING.md) : processus de nettoyage des données
+- [ANALYSES.md](ANALYSES.md) : résultats et insights des analyses

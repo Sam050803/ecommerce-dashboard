@@ -24,20 +24,22 @@ def clean_data(df: pd.DataFrame) -> pd.DataFrame:
     df['InvoiceDate'] = pd.to_datetime(df['InvoiceDate'])
     print(f"  - InvoiceDate exemple : {df['InvoiceDate'].head(3).values}")
     
-    # Extraire les features temporelles (année, mois, jour, jour de la semaine, heure)
+    # Extraire les features temporelles (année, mois, jour, jour de la semaine, heure, nom du jour)
     df['Year'] = df['InvoiceDate'].dt.year
     df['Month'] = df['InvoiceDate'].dt.month
     df['Day'] = df['InvoiceDate'].dt.day
     df['DayOfWeek'] = df['InvoiceDate'].dt.dayofweek
+    df['DayName'] = df['InvoiceDate'].dt.day_name()
     df['Hour'] = df['InvoiceDate'].dt.hour
-    print(f"  - Features temporelles extraites (Year, Month, Day, DayOfWeek, Hour)")
+    print(f"  - Features temporelles extraites (Year, Month, Day, DayOfWeek, DayName, Hour)")
     
     print(f"Après nettoyage : {df.shape[0]} lignes")
     
     # Nettoyer la colonne Description
     df['Description'] = df['Description'].str.strip().str.upper()
     df['Country'] = df['Country'].str.strip().str.upper()
-    print(f"  - Description et Country nettoyées (trim + uppercase)")
+    df['DayName'] = df['DayName'].str.strip().str.upper()
+    print(f"  - Description, Country et DayName nettoyées (trim + uppercase)")
     print(f"Colonnes finales : {df.head(1).to_dict(orient='records')[0].keys()}")
     return df
 
