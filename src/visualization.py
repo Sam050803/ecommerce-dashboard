@@ -284,7 +284,7 @@ def generate_all_charts():
     print("✓ CA par jour")
     plot_revenue_by_hour(df)
     print("✓ CA par heure")
-    print(f"\n🎉 8 graphiques enregistrés dans {IMAGES_DIR.resolve()}")
+    print(f"\n8 graphiques enregistrés dans {IMAGES_DIR.resolve()}")
     
 if __name__ == "__main__":
     generate_all_charts()
