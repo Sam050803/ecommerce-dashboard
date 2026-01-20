@@ -38,6 +38,13 @@ python -m src.preprocessing
 
 Cela génère `data/processed/clean_data.csv` contenant les données traitées et prêtes pour l'analyse.
 
+**Générer les visualisations** :
+```bash
+python -m src.visualization
+```
+
+Cela crée 8 graphiques haute résolution dans le dossier `images/`.
+
 **Explorez les données** :
 Ouvrez les notebooks Jupyter dans le dossier `notebooks/` pour des analyses détaillées.
 
@@ -50,16 +57,27 @@ ecommerce-dashboard/
 │   │   └── online_retail.csv
 │   └── processed/              # Données nettoyées et traitées
 │       └── clean_data.csv
+├── images/                     # Graphiques et visualisations
+│   ├── kpis_overview.png
+│   ├── revenue_by_country.png
+│   ├── revenue_by_month.png
+│   ├── top_products.png
+│   ├── top_customers.png
+│   ├── transaction_distribution.png
+│   ├── revenue_by_weekday.png
+│   └── revenue_by_hour.png
 ├── notebooks/                  # Analyses Jupyter
 │   ├── 01_exploration.ipynb    # Exploration et diagnostic initial
-│   ├── 02_preprocessing.ipynb  # (À venir)
-│   └── 03_analysis.ipynb       # (À venir)
+│   └── ...                     # Autres notebooks
 ├── src/
 │   ├── __init__.py
-│   └── preprocessing.py        # Script de nettoyage des données
+│   ├── preprocessing.py        # Script de nettoyage des données
+│   ├── analysis.py             # Analyses métier et KPIs
+│   └── visualization.py        # Génération des graphiques
 ├── CLEANING.md                 # Documentation complète du nettoyage
+├── ANALYSES.md                 # Synthèse des résultats et insights
 ├── requirements.txt            # Dépendances Python
-└── README.md
+└── README.md                   # Présentation et guide du projet
 ```
 
 ## Dataset
@@ -89,9 +107,24 @@ Le script `src/preprocessing.py` effectue les transformations suivantes :
 3. **Standardisation du texte**
    - Description et Country : suppression des espaces superflus, conversion en majuscules
 
-**Résultat** : 530 104 lignes valides et 14 colonnes enrichies
+**Résultat** : 530 104 lignes valides et 15 colonnes enrichies
 
 Pour plus de détails, voir [CLEANING.md](CLEANING.md).
+
+## Visualisations
+
+Le script `src/visualization.py` génère 8 graphiques professionnels :
+
+1. **KPIs Overview** : Vue d'ensemble des indicateurs clés (CA, transactions, clients, panier moyen)
+2. **CA par pays** : Top 10 pays avec pourcentage UK
+3. **Évolution mensuelle** : Courbe du CA avec annotation du pic novembre
+4. **Top produits** : 10 produits les plus rentables (barres horizontales)
+5. **Top clients** : 10 meilleurs clients avec nombre de commandes
+6. **Distribution transactions** : Histogramme des montants par facture (médiane vs moyenne)
+7. **CA par jour** : Performance par jour de semaine
+8. **CA par heure** : Répartition horaire de l'activité
+
+Tous les graphiques utilisent un formatage intelligent (M£, k£) et des annotations contextuelles.
 
 ## Questions métier adressées
 
@@ -115,7 +148,7 @@ Pour plus de détails, voir [CLEANING.md](CLEANING.md).
 - [x] Exploration initiale des données
 - [x] Nettoyage et préparation
 - [x] Analyses métier
-- [ ] Visualisations
+- [x] Visualisations
 - [ ] Dashboard interactif
 - [ ] Déploiement
 
