@@ -1,8 +1,9 @@
 # Environnement virtuel
 venv/
 
-# Données
-data/
+# Données (sauf sample pour démo)
+data/raw/
+data/processed/clean_data.csv
 
 # Python
 __pycache__/

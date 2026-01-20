@@ -1,14 +1,46 @@
-# E-commerce Dashboard
+# E-commerce Analytics Dashboard
 
-Analyse complète des données de ventes d'un commerce électronique britannique avec création d'un dashboard interactif.
+Dashboard interactif Streamlit pour analyser les ventes d’un e-commerce britannique (Online Retail). Le projet couvre l’exploration, le nettoyage, l’analyse métier et la visualisation des insights clés.
 
-## À propos
+## Démo en ligne
 
-Ce projet analyse l'Online Retail Dataset de Kaggle, qui contient plus de 500 000 transactions d'une entreprise e-commerce basée au Royaume-Uni. L'objectif est d'explorer les données, les nettoyer et créer des visualisations interactives pour extraire des insights métier.
+Lien Streamlit Cloud : à compléter après déploiement.
+
+## Aperçu
+
+Ce projet s’appuie sur l’Online Retail Dataset (Kaggle) contenant plus de 500 000 transactions réelles (2010–2011). L’objectif est de produire un tableau de bord décisionnel clair et actionnable.
+
+Principales analyses :
+
+- KPI globaux (CA, transactions, clients, panier moyen)
+- Top pays / produits / clients
+- Évolution temporelle et saisonnalité
+- Répartition horaire et par jour
+
+## Fonctionnalités du dashboard
+
+- Filtres dynamiques (pays, période, montant minimum, top N)
+- KPIs et comparaisons clés
+- 7 graphiques interactifs Plotly
+- Thème sombre optimisé lisibilité
+- Export des données filtrées
+
+## Dataset
+
+**Online Retail Dataset** — e-commerce UK
+
+- Période : 01/12/2010 → 09/12/2011
+- Lignes initiales : 541 909
+- Produits uniques : 4 000+
+- Pays couverts : 38
+- Colonnes : InvoiceNo, StockCode, Description, Quantity, InvoiceDate, UnitPrice, CustomerID, Country
+
+Source : [Kaggle](https://www.kaggle.com/datasets/ulrikthygepedersen/online-retail-dataset)
 
 ## Démarrage rapide
 
 ### Prérequis
+
 - Python 3.8+
 - pip ou conda
 
@@ -29,130 +61,84 @@ venv\Scripts\activate             # Windows
 pip install -r requirements.txt
 ```
 
-### Utilisation
+### Lancer le dashboard
 
-**Nettoyer et préparer les données** :
 ```bash
-python -m src.preprocessing
+streamlit run app.py
 ```
 
-Cela génère `data/processed/clean_data.csv` contenant les données traitées et prêtes pour l'analyse.
+### Générer les données nettoyées et graphiques (optionnel)
 
-**Générer les visualisations** :
 ```bash
+python -m src.preprocessing
 python -m src.visualization
 ```
 
-Cela crée 8 graphiques haute résolution dans le dossier `images/`.
-
-**Explorez les données** :
-Ouvrez les notebooks Jupyter dans le dossier `notebooks/` pour des analyses détaillées.
+Les graphiques sont enregistrés dans le dossier [images/](images/) et les données nettoyées dans [data/processed/](data/processed/).
 
 ## Structure du projet
 
 ```
 ecommerce-dashboard/
+├── app.py                       # Dashboard Streamlit
 ├── data/
-│   ├── raw/                    # Données brutes (source Kaggle)
-│   │   └── online_retail.csv
-│   └── processed/              # Données nettoyées et traitées
-│       └── clean_data.csv
-├── images/                     # Graphiques et visualisations
-│   ├── kpis_overview.png
-│   ├── revenue_by_country.png
-│   ├── revenue_by_month.png
-│   ├── top_products.png
-│   ├── top_customers.png
-│   ├── transaction_distribution.png
-│   ├── revenue_by_weekday.png
-│   └── revenue_by_hour.png
-├── notebooks/                  # Analyses Jupyter
-│   ├── 01_exploration.ipynb    # Exploration et diagnostic initial
-│   └── ...                     # Autres notebooks
-├── src/
-│   ├── __init__.py
-│   ├── preprocessing.py        # Script de nettoyage des données
-│   ├── analysis.py             # Analyses métier et KPIs
-│   └── visualization.py        # Génération des graphiques
-├── CLEANING.md                 # Documentation complète du nettoyage
-├── ANALYSES.md                 # Synthèse des résultats et insights
-├── requirements.txt            # Dépendances Python
-└── README.md                   # Présentation et guide du projet
+│   ├── raw/                     # Données brutes (non versionnées)
+│   └── processed/               # Données nettoyées
+│       ├── clean_data.csv       # Dataset complet (local)
+│       └── clean_data_sample.csv# Sample pour déploiement
+├── images/                      # Graphiques exportés
+├── notebooks/                   # Analyses Jupyter
+├── src/                         # Scripts de préparation/analyses
+├── .streamlit/                  # Configuration Streamlit Cloud
+├── ANALYSES.md
+├── CLEANING.md
+├── requirements.txt
+└── README.md
 ```
 
-## Dataset
+## Insights clés (exemples)
 
-**Online Retail Dataset** - Commerce électronique britannique
+- CA total ≈ £10.7M
+- ~20k transactions uniques
+- ~4.3k clients identifiés
+- Panier moyen ≈ £536
+- Pic de vente en novembre 2011
+- Forte concentration sur UK
 
-- Période : 1er décembre 2010 - 9 décembre 2011 (13 mois)
-- Nombre de transactions : 541 909 lignes initiales
-- Produits uniques : 4 000+
-- Pays couverts : 38
-- Colonnes brutes : InvoiceNo, StockCode, Description, Quantity, InvoiceDate, UnitPrice, CustomerID, Country
+## Visualisations générées
 
-Source: [Kaggle](https://www.kaggle.com/datasets/ulrikthygepedersen/online-retail-dataset)
+- KPIs globales
+- CA par pays (Top 10)
+- Évolution mensuelle du CA
+- Top produits par CA
+- Top clients par CA
+- Distribution des montants par transaction
+- CA par jour de la semaine
+- CA par heure
 
-## Processus de nettoyage
+## Déploiement Streamlit Cloud
 
-Le script `src/preprocessing.py` effectue les transformations suivantes :
-
-1. **Suppression des données invalides**
-   - Transactions avec Quantity ≤ 0
-   - Transactions avec UnitPrice ≤ 0
-
-2. **Création de nouvelles colonnes**
-   - TotalPrice = Quantity × UnitPrice
-   - Features temporelles : Year, Month, Day, DayOfWeek, Hour
-
-3. **Standardisation du texte**
-   - Description et Country : suppression des espaces superflus, conversion en majuscules
-
-**Résultat** : 530 104 lignes valides et 15 colonnes enrichies
-
-Pour plus de détails, voir [CLEANING.md](CLEANING.md).
-
-## Visualisations
-
-Le script `src/visualization.py` génère 8 graphiques professionnels :
-
-1. **KPIs Overview** : Vue d'ensemble des indicateurs clés (CA, transactions, clients, panier moyen)
-2. **CA par pays** : Top 10 pays avec pourcentage UK
-3. **Évolution mensuelle** : Courbe du CA avec annotation du pic novembre
-4. **Top produits** : 10 produits les plus rentables (barres horizontales)
-5. **Top clients** : 10 meilleurs clients avec nombre de commandes
-6. **Distribution transactions** : Histogramme des montants par facture (médiane vs moyenne)
-7. **CA par jour** : Performance par jour de semaine
-8. **CA par heure** : Répartition horaire de l'activité
-
-Tous les graphiques utilisent un formatage intelligent (M£, k£) et des annotations contextuelles.
-
-## Questions métier adressées
-
-- Quel est le chiffre d'affaires total ?
-- Quels sont les 10 pays/produits/clients les plus rentables ?
-- Comment évoluent les ventes dans le temps ?
-- Existe-t-il une saisonnalité ?
-- Quel est le panier moyen par commande ?
-- Quels produits sont les plus retournés ?
-
-## Technologies
-
-- **Pandas** : manipulation et nettoyage de données
-- **NumPy** : calculs numériques
-- **Matplotlib/Seaborn** : visualisations statiques
-- **Jupyter** : notebooks interactifs
-- **Streamlit** : dashboard interactif (à venir)
+1. Aller sur [share.streamlit.io](https://share.streamlit.io)
+2. Connecter GitHub
+3. Créer une nouvelle app
+4. Sélectionner ce repository et [app.py](app.py)
 
 ## État du projet
 
-- [x] Exploration initiale des données
+- [x] Exploration initiale
 - [x] Nettoyage et préparation
 - [x] Analyses métier
 - [x] Visualisations
-- [ ] Dashboard interactif
-- [ ] Déploiement
+- [x] Dashboard interactif
+- [ ] Déploiement Streamlit Cloud
 
 ## Documentation
 
-- [CLEANING.md](CLEANING.md) : processus de nettoyage des données
-- [ANALYSES.md](ANALYSES.md) : résultats et insights des analyses
+- [CLEANING.md](CLEANING.md) : processus de nettoyage
+- [ANALYSES.md](ANALYSES.md) : synthèse des analyses
+
+## Auteur
+
+Samuel MUSIC — Étudiant Data / alternance
+
+LinkedIn : à compléter
