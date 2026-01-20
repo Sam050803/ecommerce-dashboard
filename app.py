@@ -1,6 +1,19 @@
 """
 E-commerce Analytics Dashboard
 Simple, clean, professional
+
+Ce module déploie un tableau de bord interactif avec Streamlit pour explorer
+les données de ventes. Il inclut des filtres latéraux, des KPIs dynamiques
+et des visualisations interactives avec Plotly.
+
+Features:
+- Chargement des données avec fallback (local vs cloud sample)
+- Filtres dynamiques: Pays, Date, Montant min, Top N
+- Onglets thématiques: Vue d'ensemble, Analyse temporelle, Export des données
+- Support du thème sombre via CSS et configuration Plotly
+
+Author: Seyyid-Aassuf
+Date: 2026
 """
 
 import streamlit as st

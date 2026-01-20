@@ -1,3 +1,19 @@
+"""
+Module de visualisation des données e-commerce.
+
+Crée des graphiques statiques avec Matplotlib et Seaborn pour l'analyse exploratoire
+et le rapport final. Les images sont sauvegardées dans le dossier 'images/'.
+
+Functions:
+    load_data: Charge les données pour la visualisation.
+    format_currency: Formate les montants pour l'affichage (k£, M£).
+    generate_all_charts: Exécute la génération de tous les graphiques définis.
+    plot_*: Fonctions spécifiques pour chaque type de graphique (pays, mois, produits...).
+
+Author: Seyyid-Aassuf
+Date: 2026
+"""
+
 from pathlib import Path
 import matplotlib.pyplot as plt
 import pandas as pd
