@@ -15,15 +15,23 @@ L'objectif principal est de fournir une interface intuitive pour :
 *   **Suivre la performance globale** : Chiffre d'affaires, volume de ventes, panier moyen.
 *   **Comprendre la clientèle** : Segmentation géographique et analyse des meilleurs clients.
 *   **Analyser les produits** : Identification des best-sellers.
-*   **Détecter les tendance** : Saisonnalité mensuelle, jours et heures de pointe.
+*   **Détecter les tendances** : Saisonnalité mensuelle, jours et heures de pointe.
 
 ## 💾 Source du Dataset
 
-Les données proviennent de l'**Online Retail Dataset** (UCI Machine Learning ReLes données proviennent de l'**Online Retail Dataset** (UCI Machine Learning ReLes données proviennent de l'**Online Retail Dataset** (UCI Machine Learninescription, Quantité, Date, Prix Unitaire, ID Client, Pays.
+Les données proviennent de l'**Online Retail Dataset** (UCI Machine Learning Repository / Kaggle).
+*   **Période** : 01/12/2010 au 09/12/2011 (1 an)
+*   **Volume** : ~540 000 transactions
+*   **Contenu** : N° Facture, Code Produit, Description, Quantité, Date, Prix Unitaire, ID Client, Pays.
 
 _Source originale : [Kaggle - Online Retail Dataset](https://www.kaggle.com/datasets/ulrikthygepedersen/online-retail-dataset)_
 
-## 🛠 Technologies Ut## 🛠 Technologies Ut## 🛠 Technologies Ut## 🛠 Technologies Ut## 🛠 Technologies Ut## 🛠 Technologies Ut## �mPy## 🛠 Techlisation** : Plotly Express (interactif), Seaborn/Matplotlib (statique)
+## 🛠 Technologies Utilisées
+
+*   **Langage** : Python 3.11
+*   **Interface Web** : Streamlit
+*   **Manipulation de données** : Pandas, NumPy
+*   **Visualisation** : Plotly Express (interactif), Seaborn/Matplotlib (statique)
 *   **Gestion de version** : Git / GitHub
 
 ## ⚙️ Installation
@@ -38,9 +46,30 @@ Pour exécuter ce projet localement, suivez ces étapes :
 
 2.  **Créer un environnement virtuel (recommandé) :**
     ```bash
-            m venv venv
-    sou    sou    sou    sou    sou    sou    sou    sou    sou    sou    sou    sou    sou    sou    sou    sou    sou    sou    sou    sou    sou    sou    sou    sou    sou    sou    sou    sou    sou    sou    sou    sou    sou    sou    sou    sou    sou    sou    sou    sou    sou    sou    sou 
-2.2.2.2.2.2.2.2.2.2.2.2.2.2.2.2.2.2.2.2.2.2.2.2.2.2.2.2.2.2.2.2.2.2.2.2.2.2.2.2.2.2.2.2.2.2.2.2.2.2.2.2.2.2.2.2.2.2.2.2.2.2.2.ionna2.2.2.2.2.2.2.2.2.2.2.2.2.2.2.2.2.2.2.2.2.2.2.2.2.2.2.2.2.2.2.2.2.2.2.2.2.2.2.2.2.2.2.2.2.2.2.2.2.2.2.2.2.2.2.2.2.2.2.2.2.2.2.ionna2.2.2.2.2.2.2.2.2.2.2.2.2.2.2.2.2.2.2.2.2.2.2.2.2.2.2.2.2.2.2.2.2.2.2.2.2.2.2.2.2.2.2.2.2.2.2.2.iltrées ou les tableaux récapitulatifs en CSV.
+    python -m venv venv
+    source venv/bin/activate  # Sur macOS/Linux
+    # venv\Scripts\activate   # Sur Windows
+    ```
+
+3.  **Installer les dépendances :**
+    ```bash
+    pip install -r requirements.txt
+    ```
+
+## 🚀 Utilisation
+
+1.  **Lancer l'application Streamlit :**
+    ```bash
+    streamlit run app.py
+    ```
+
+2.  **Accéder au dashboard :**
+    Le navigateur s'ouvrira automatiquement à l'adresse `http://localhost:8501`.
+
+3.  **Fonctionnalités :**
+    *   Utilisez la barre latérale pour filtrer par **Pays**, **Date**, ou **Montant Minimum**.
+    *   Naviguez entre les onglets **Overview**, **Time Analysis**, et **Export**.
+    *   Téléchargez les données filtrées ou les tableaux récapitulatifs en CSV.
 
 ## 🖼️ Aperçu du Dashboard
 
@@ -57,8 +86,16 @@ Pour exécuter ce projet localement, suivez ces étapes :
 Quelques découvertes issues de l'analyse des données :
 *   **Chiffre d'affaires total** : ~10.7 Millions £ sur la période.
 *   **Saisonnalité** : Un pic de ventes très marqué est visible en **Novembre 2011**, probablement dû aux achats de fin d'année.
-*   **Marché principal** : Le **Royaume-Uni** repré*   **Marché principal** : Le **Royaume-Uni** repré*   **Marché principal** : Le **Royaume-Uni** repré*   **Marché principal** : Le **Royaume-Uni** repré*   **Marché principal** : Le **Royaume-Uni** repré*   **Marché principal** : Le **Royaume-Uni** repré*   **Marché principal** : Le **Royaume-Uni** repré*   **Marché principal** : Le **Royaume-Uni** repré*   **Marché principal** : Le **R# �*   **Marché principal** : text
-*   **Marché principal** �─ app.py                  # Application principale Streamlit
+*   **Marché principal** : Le **Royaume-Uni** représente la grande majorité du chiffre d'affaires.
+*   **Produits** : Les articles de décoration "vintage" et les sacs sont parmi les plus populaires.
+*   **Meilleurs Clients** : Une petite fraction des clients génère une part significative du revenu (principe de Pareto).
+*   **Horaires** : Les commandes sont plus fréquentes en milieu de journée (10h-15h) et nulles le samedi (fermeture probable).
+
+## 📂 Structure du Projet
+
+```text
+ecommerce-dashboard/
+├── app.py                  # Application principale Streamlit
 ├── requirements.txt        # Liste des dépendances Python
 ├── README.md               # Documentation du projet
 ├── .gitignore              # Fichiers ignorés par Git
@@ -78,12 +115,23 @@ Quelques découvertes issues de l'analyse des données :
 Ce projet met en œuvre plusieurs compétences clés en Data Science et Ingénierie :
 *   **Data Cleaning** : Gestion des valeurs manquantes, filtrage des transactions annulées, conversion de types.
 *   **Feature Engineering** : Création de colonnes temporelles (Mois, Jour, Heure), calcul du montant total.
-*  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *ur*  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  ével*  *  *  *  ** : Création d'une application interactive avec Streamlit (session state*  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *ur* ti*  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *ur*  *  *  *  se p*  *  *  *  * Forecasting) du chiffre d'affaires futur.
+*   **Data Visualization** : Choix des graphiques adaptés pour communiquer des insights (Barplots, Linecharts).
+*   **Développement Web** : Création d'une application interactive avec Streamlit (session state, layout).
+*   **Déploiement** : Mise en production de l'application sur le Cloud.
+
+## 🚀 Améliorations Possibles
+
+*   Ajouter une **analyse prédictive** (Forecasting) du chiffre d'affaires futur.
 *   Implémenter une **segmentation client RFM** (Récence, Fréquence, Montant) avancée.
-*   Ajouter un syst*   Ajouter un syst*   Ajouter un syst*   Ajouter un syst*   Ajouter un sysr l*   Ajouter un syst*   Ajouter un syst*   Ajouter un syst*   Ajout Parquet au lieu de CSV).
+*   Ajouter un système d'authentification pour sécuriser l'accès au dashboard.
+*   Optimiser le chargement des données pour de très gros volumes (ex: utiliser Parquet au lieu de CSV).
 
 ## 👤 Auteur
 
-**Se**Se**Se**Se**Se**Se**Se**Se**Se**Se**Se**Se**Se**Se**Se**Se**Se**Se**Se**Se**Se*803)
-**Se**Se**Se**Se**Se**Se**Se**Se**Se**Se**Se**Se**Se**Se**Se**Se**Se**Se**Se**Se**Se*803)
- sysr l*   Ajr : 21 Janvier 2026*
+**Seyyid-Aassuf**
+*   *Développeur Data & IA*
+*   [GitHub](https://github.com/Sam050803)
+*   [LinkedIn](https://www.linkedin.com/in/seyyid-aassuf-mamadou-96bb27374)
+
+---
+*Dernière mise à jour : 21 Janvier 2026*
