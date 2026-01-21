@@ -73,13 +73,20 @@ Pour exécuter ce projet localement, suivez ces étapes :
 
 ## 🖼️ Aperçu du Dashboard
 
-### Vue d'ensemble (Overview)
-*Indicateurs clés et tops classements.*
+### 1. Vue d'ensemble (Overview)
+*Indicateurs de performance globaux (KPIs).*
 ![Vue d'ensemble](images/dashboard_overview.png)
 
-### Analyse Temporelle
-*Tendances mensuelles, hebdomadaires et horaires.*
+*Détail des meilleurs produits et clients (Top Charts).*
+![Classements](images/dashboard_top_charts.png)
+
+### 2. Analyse Temporelle
+*Évolution du chiffre d'affaires (Mensuel, Hebdomadaire, Horaire).*
 ![Analyse Temporelle](images/dashboard_time.png)
+
+### 3. Export de Données
+*Filtrage dynamique et téléchargement des résultats.*
+![Export](images/dashboard_export.png)
 
 ## 💡 Insights Clés
 
@@ -91,7 +98,14 @@ Quelques découvertes issues de l'analyse des données :
 *   **Meilleurs Clients** : Une petite fraction des clients génère une part significative du revenu (principe de Pareto).
 *   **Horaires** : Les commandes sont plus fréquentes en milieu de journée (10h-15h) et nulles le samedi (fermeture probable).
 
-## 📂 Structure du Projet
+## � Documentation Détaillée
+
+Pour aller plus loin dans la compréhension technique du projet, consultez ces rapports détaillés :
+
+*   **[🧹 Rapport de Nettoyage (CLEANING.md)](CLEANING.md)** : Détail des étapes de préparation des données (valeurs manquantes, doublons, filtrage, conversion de types).
+*   **[📊 Rapport d'Analyses (ANALYSES.md)](ANALYSES.md)** : Analyses approfondies, questions métier résolues et méthodologie utilisée pour extraire les insights.
+
+## �📂 Structure du Projet
 
 ```text
 ecommerce-dashboard/
@@ -110,14 +124,14 @@ ecommerce-dashboard/
 └── notebooks/              # Notebooks Jupyter pour l'exploration
 ```
 
-## 🧠 Compétences Démontrées
+## 🧠 Compétences Techniques & Méthodologiques
 
-Ce projet met en œuvre plusieurs compétences clés en Data Science et Ingénierie :
-*   **Data Cleaning** : Gestion des valeurs manquantes, filtrage des transactions annulées, conversion de types.
-*   **Feature Engineering** : Création de colonnes temporelles (Mois, Jour, Heure), calcul du montant total.
-*   **Data Visualization** : Choix des graphiques adaptés pour communiquer des insights (Barplots, Linecharts).
-*   **Développement Web** : Création d'une application interactive avec Streamlit (session state, layout).
-*   **Déploiement** : Mise en production de l'application sur le Cloud.
+*   **Développement Python Avancé** : Architecture modulaire (dossier `src/`), respect des bonnes pratiques (PEP 8, docstrings), et typage des données.
+*   **Traitement de Données (ETL)** : Pipelines de nettoyage et de transformation robustes avec **Pandas** (gestion des valeurs nulles, formatage des dates, filtrage complexe).
+*   **Data Visualisation Interactive** : Conception de graphiques dynamiques et réactifs avec **Plotly Express** pour maximiser l'expérience utilisateur.
+*   **Développement Web Data** : Maîtrise du framework **Streamlit** (gestion du `Session State`, mise en cache `@st.cache_data`, layout responsive).
+*   **Analyse Stratégique** : Capacité à traduire des besoins métier en indicateurs techniques (KPIs) et dashboards de pilotage.
+*   **DevOps & Versioning** : Gestion de projet sous **Git/GitHub**, utilisation d'environnements virtuels (`venv`) et déploiement continu sur le Cloud.
 
 ## 🚀 Améliorations Possibles
 
