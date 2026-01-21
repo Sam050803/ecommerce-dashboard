@@ -1,3 +1,4 @@
+# Nettoyage et prétraitement des données de vente en ligne
 import pandas as pd
 from pathlib import Path
 
