@@ -75,17 +75,21 @@ Pour exécuter ce projet localement, suivez ces étapes :
 
 ### 1. Vue d'ensemble (Overview)
 *Indicateurs de performance globaux (KPIs).*
+
 ![Vue d'ensemble](images/dashboard_overview.png)
 
 *Détail des meilleurs produits et clients (Top Charts).*
+
 ![Classements](images/dashboard_top_charts.png)
 
 ### 2. Analyse Temporelle
 *Évolution du chiffre d'affaires (Mensuel, Hebdomadaire, Horaire).*
+
 ![Analyse Temporelle](images/dashboard_time.png)
 
 ### 3. Export de Données
 *Filtrage dynamique et téléchargement des résultats.*
+
 ![Export](images/dashboard_export.png)
 
 ## 💡 Insights Clés
